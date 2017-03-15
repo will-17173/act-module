@@ -20,7 +20,7 @@ $ spm install actmodule --save
 ```html
 <div id="act_module"></div>
 <script>
-  seajs.use(['actmodule'], function(ActModule) {
+  pandora.use(['actmodule'], function(ActModule) {
       new ActModule({
           "element":"#act_module",
           "needComment":true,
