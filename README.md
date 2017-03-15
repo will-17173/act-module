@@ -1,8 +1,5 @@
-# actmodule 
+# 17173通用活动组件actmodule 
 
----
-
-act
 
 ## Install
 
