@@ -1,0 +1,15 @@
+<div class="zq-actcompt-pop" id="comment_pop">
+	<section class="zq-actcompt-pop-in">
+		<header class="zq-actcompt-pop-hd"><h4 class="zq-actcompt-tit">填写评论后参与抽奖</h4><a href="javascript:;" class="zq-actcompt-pop-close"><i class="zq-actcompt-ico-close"></i></a></header>
+		<div class="zq-actcompt-pop-bd">
+			{{#if commentTip}}
+			<p class="zq-actcompt-tp">{{commentTip}}：</p>
+			{{/if}}
+			<div class="zq-actcompt-form-textarea"><textarea id="comment_text" name="textarea" class="" placeholder=""></textarea></div>
+			{{#if showValidateCode}}
+			<div class="zq-actcompt-validate" style="padding-top: 10px;"><input maxlength="4" type="text" class="zq-actcompt-validate-input" style="width:50px; height: 30px; line-height:30px; border:1px solid #eee;"> <img id="zq-actcompt-validate-img" style="vertical-align:middle;" height="35"></div>
+			{{/if}}
+			<a href="javascript:;" class="zq-actcompt-pop-btn-submit" id="submit_comment">提交</a>
+		</div>
+	</section>
+</div>	

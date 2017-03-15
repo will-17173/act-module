@@ -1,0 +1,21 @@
+<div class="zq-actcompt-pop" id="info_pop">
+	<section class="zq-actcompt-pop-in">
+		<header class="zq-actcompt-pop-hd"><h4 class="zq-actcompt-tit">提交联系方式</h4><a href="javascript:;" class="zq-actcompt-pop-close"><i class="zq-actcompt-ico-close"></i></a></header>
+		<div class="zq-actcompt-pop-bd">
+			<p class="zq-actcompt-pop-tiptxt">请填写真实信息，{{#if collectInfo}}才有机会抽到{{/if}}{{#unless collectInfo}}方便我们发放{{/unless}}奖品。</p>
+
+			{{#each fieldSet}}
+			<div class="zq-actcompt-form-item"{{#if comment}} style="display:none"{{/if}}>
+				<label class="zq-actcompt-form-tit" data-name>{{name}}</label>
+				<input class="zq-actcompt-form-input" type="text" name="{{columnName}}" maxlength="{{length}}" value="" placeholder="">
+			</div>
+			<div class="zq-actcompt-form-error"><i class="zq-actcompt-ico-error"></i><span></span></div>
+			{{/each}}
+
+		</div>
+		<div class="zq-actcompt-btn-box">
+			<button type="button" class="zq-actcompt-pop-btn-submit" id="submit_info">提交</button>
+			<button type="button" class="zq-actcompt-pop-btn-cancel" id="cancel_submit_info">取消</button>
+		</div>
+	</section>
+</div>

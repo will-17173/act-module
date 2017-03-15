@@ -1,0 +1,49 @@
+<div class="zq-actcompt-pop{{#if success}} zq-actcompt-pop-zjjg{{/if}}{{#if failed}} zq-actcompt-pop-wzj{{/if}}" id="result_pop">
+	<span class="zq-actcompt-pop-close"></span>
+	<h4 class="zq-actcompt-pop-tit">{{#if showError}}提示{{else}}中奖结果{{/if}}</h4>
+	<div class="zq-actcompt-pcon ">
+		{{#if success}}
+		<div class="zq-actcompt-zjjg-c1">
+			<h4 class="zq-actcompt-tit">恭喜您！获得了<span class="zq-actcompt-or">{{prizeName}}</span></h4>
+
+			{{#if code}}
+				{{#each code}}
+					<div class="zq-actcompt-form-item">
+						<div class="zq-actcompt-form-tit">帐号：</div>
+						<div class="zq-actcompt-form-input"><input class="act-module-code" type="text" value="{{this}}"></div>
+						<a href="#copy" class="zq-actcompt-btn-copy btn-copy-code">复制</a>
+					</div>
+				{{/each}}
+			{{/if}}
+
+			{{#if secretKey}}
+				<div class="zq-actcompt-form-item">
+					<div class="zq-actcompt-form-tit">密码：</div>
+					<div class="zq-actcompt-form-input"><input id="act_module_secretkey" type="text" value="{{secretKey}}"></div>
+					<a href="#copy" class="zq-actcompt-btn-copy" id="btn_copy_secretkey">复制</a>
+				</div>			
+			{{/if}}
+
+			{{#unless code}}
+				<div class="zq-actcompt-btn-box" style="display:none;"><button type="button" class="zq-actcompt-btn-submit" id="btn_fill_info">填写资料</button></div>
+			{{/unless}}
+
+		</div>
+		
+		<div class="zq-actcompt-zjjg-c2">
+			<h4 class="tit">说明：</h4>
+			{{{prizeIntro}}}
+		</div>
+		{{/if}}
+
+		{{#if failed}}
+		{{{notWinHtmlPc}}}
+		{{/if}}
+
+		{{#if showError}}
+		{{msg}}
+		{{/if}}
+
+	</div>
+</div>
+<div class="zq-actcompt-pop-mask"></div>

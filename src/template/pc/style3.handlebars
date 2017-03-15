@@ -1,0 +1,57 @@
+<div class="zq-actcompt zq-actcompt3">
+	<div class="zq-actcompt-hd">
+		<h4 class="zq-actcompt-tit">{{name}}</h4>
+	</div>
+	<div class="zq-actcompt-bd">
+		<div class="zq-actcompt3-c1 zq-actcompt-fl zq-actcompt3-{{prizeCount}}">
+			<div class="zq-actcompt-box zq-actcompt-box-{{prizeCount}}">
+
+				{{#each prizeList}}
+				<div class="zq-actcompt-item zq-actcompt-item{{index}}" data-prizeId="{{prizeId}}">
+					<img src="{{prizePicture}}" width="110" height="90" alt="">
+					<div></div>
+				</div>
+				{{/each}}
+				<div class="zq-actcompt-item zq-actcompt-item-noprize" data-prizeId="0">
+					<img src="http://ue.17173cdn.com/a/module/zq/2015/act-lottery/img/gn.png" width="110" height="90" alt="">
+					<div></div>
+				</div>
+
+			</div>
+
+			{{#if status.inProgress}}
+			<a href="#lottery" title="我要抽奖" class="zq-actcompt-btn-cj" id="zq_actcompt_in_progress">我要抽奖<i class="zq-actcompt-ico zq-actcompt-ico-play"></i></a>
+			<div class="zq-actcompt-oz">
+				<span class="zq-actcompt-fl zq-actcompt-joins">已有<span class="zq-actcompt-or zq-actcompt-fb">{{joins}}</span>人参与</span>
+				{{#if status.winnerUrl}}
+				<a href="{{status.winnerUrl}}" target="_blank" title="查看中奖名单" class="zq-actcompt-fr zq-actcompt-btn-winners ">查看中奖名单&gt;&gt;</a>
+				{{/if}}
+			</div>
+			{{/if}}
+
+			{{#if status.notYetStart}}
+			<span title="即将开始" class="zq-actcompt-btn-cj zq-actcompt-btn-cjw" id="zq_actcompt_not_yet_start">即将开始<i class="zq-actcompt-ico zq-actcompt-ico-play"></i></span>
+			<p class="zq-actcompt-p zq-actcompt-or zq-actcompt-countdown"></p>
+			{{/if}}
+
+			{{#if status.ended}}
+			<span title="活动已结束" class="zq-actcompt-btn-cj zq-actcompt-btn-cjw">活动已结束<i class="zq-actcompt-ico zq-actcompt-ico-play"></i></span>
+			<p class="zq-actcompt-p zq-actcompt-joins">已有<span class="zq-actcompt-or zq-actcompt-fb">{{joins}}</span>人参与</p>
+			{{/if}}
+
+		</div>	
+
+
+		<div class="zq-actcompt3-c2">
+			<div class="zq-actcompt-info">
+				<h4 class="zq-actcompt-tits"><strong>活动时间：</strong></h4>
+				<p class="zq-actcompt-p">{{#if collectInfo}} {{beginTimeFormatted}} - {{endTimeFormatted}} {{else}} {{lotteryBeginTimeFormatted}} - {{lotteryEndTimeFormatted}}  {{/if}}</p>
+			</div>
+			<div class="zq-actcompt-info">
+				<h4 class="zq-actcompt-tits"><strong>活动规则：</strong></h4>
+				{{{description}}}
+			</div>
+		</div>
+		
+	</div>
+</div>

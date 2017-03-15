@@ -1,0 +1,45 @@
+<div class="zq-actcompt-pop" id="result_pop">
+	<section class="zq-actcompt-pop-in">
+		<header class="zq-actcompt-pop-hd"><h4 class="zq-actcompt-tit">{{#if showError}}提示{{else}}中奖结果{{/if}}</h4><a href="javascript:;" class="zq-actcompt-pop-close"><i class="zq-actcompt-ico-close"></i></a></header>
+		<div class="zq-actcompt-pop-bd">
+
+			{{#if success}}
+			<p class="zq-actcompt-pop-zjtit">恭喜您！获得了：<br> 
+			<span class="zq-actcompt-tx1">{{prizeName}}</span></p>
+
+			{{#if code}}
+				{{#each code}}
+				<div class="zq-actcompt-form-item">
+					<label class="zq-actcompt-form-tit">帐号</label>
+					<div class="zq-actcompt-form-input">{{this}}</div>
+				</div>
+				{{/each}}
+			{{/if}}
+
+			{{#if secretKey}}
+			<div class="zq-actcompt-form-item">
+				<label class="zq-actcompt-form-tit">密码</label>
+				<div class="zq-actcompt-form-input">{{secretKey}}</div>
+			</div>
+			{{/if}}
+
+			{{#unless code}}
+			<button style="display:none;" type="button" class="zq-actcompt-pop-btn-submit zq-actcompt-btn-box" id="btn_fill_info">填写资料</button>
+			{{/unless}}
+
+			<div class="zq-actcompt-pop-line"></div>
+			<div class="zq-actcompt-pop-info"><span>说明：</span><br>
+				{{{prizeIntro}}}
+			</div>
+			{{/if}}
+
+			{{#if failed}}
+			{{{notWinHtmlMobile}}}
+			{{/if}}
+
+			{{#if showError}}
+			<p class="zq-actcompt-sub-tit">{{msg}}</p>
+			{{/if}}
+		</div>
+	</section>
+</div>

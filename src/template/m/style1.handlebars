@@ -1,0 +1,35 @@
+{{#if status.inProgress}}
+<div class="zq-actcompt1 zq-actcompt">
+		<a href="javascript:;" class="zq-actcompt-btn-get" id="zq_actcompt_in_progress"><span class="text">立即<br />参与</span><span class="many">已有<span class="zq-actcompt-joins">{{joins}}</span>人参与</span></a>
+	<div class="zq-actcompt-txt">
+		<h4 class="zq-actcompt-tit">{{name}}</h4>
+		<p><span class="zq-actcompt-txt-name">活动时间：</span>{{#if collectInfo}} {{beginTimeFormatted}} - {{endTimeFormatted}} {{else}} {{lotteryBeginTimeFormatted}} - {{lotteryEndTimeFormatted}}  {{/if}}</p>
+		<p><span class="zq-actcompt-txt-name">活动规则：</span>{{{description}}}</p>
+	</div>
+</div>
+{{/if}}
+
+
+{{#if status.notYetStart}}
+<div class="zq-actcompt1-begin zq-actcompt">
+		<a href="javascript:;" class="zq-actcompt-btn-get" id="zq_actcompt_not_yet_start"><span class="text">即将<br />开始</span><span class="many zq-actcompt-countdown"></span></a>
+	<div class="zq-actcompt-txt">
+		<h4 class="zq-actcompt-tit">{{name}}</h4>
+		<p><span class="zq-actcompt-txt-name">活动时间：</span>{{#if collectInfo}} {{beginTimeFormatted}} - {{endTimeFormatted}} {{else}} {{lotteryBeginTimeFormatted}} - {{lotteryEndTimeFormatted}}  {{/if}}</p>
+		<p><span class="zq-actcompt-txt-name">活动规则：</span>{{{description}}}</p>
+	</div>
+</div>
+{{/if}}
+
+{{#if status.ended}}
+<div class="zq-actcompt1-end zq-actcompt">
+		<a href="javascript:;" class="zq-actcompt-btn-get" id="zq_actcompt_ended">已结束<span class="many">共有{{joins}}人参与</span></a>
+	<div class="zq-actcompt-txt">
+		<h4 class="zq-actcompt-tit">{{name}}</h4>
+		<p><span class="zq-actcompt-txt-name">活动时间：</span>{{#if collectInfo}} {{beginTimeFormatted}} - {{endTimeFormatted}} {{else}} {{lotteryBeginTimeFormatted}} - {{lotteryEndTimeFormatted}}  {{/if}}</p>
+		<p><span class="zq-actcompt-txt-name">活动规则：</span>{{{description}}}</p>
+	</div>
+</div>
+{{/if}}
+
+

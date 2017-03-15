@@ -1,0 +1,16 @@
+<div class="zq-actcompt-pop" id="vote_pop" style="display:none;">
+    <section class="zq-actcompt-pop-in">
+        <header class="zq-actcompt-pop-hd"><h4 class="zq-actcompt-tit">完成投票后参与抽奖</h4><a href="javascript:;" class="zq-actcompt-pop-close"><i class="zq-actcompt-ico-close"></i></a></header>
+        {{#each votelist}}
+        <div class="zq-actcompt-pop-bd" data-voteid="{{voteid}}" data-votetype="{{voteflag}}">
+            <p class="zq-actcompt-tp">{{title}}:</p>
+            <ul class="zq-actcompt-votelist">
+                {{#each itemlist}}
+                <li class="zq-actcompt-votelist-item" data-itemid="{{itemid}}">{{itemtitle}}</li>
+                {{/each}}
+            </ul>
+            <a href="javascript:;" class="zq-actcompt-pop-btn-submit" id="submit_vote">提交</a>
+        </div>
+        {{/each}}
+    </section>
+</div>

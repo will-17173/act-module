@@ -1,0 +1,27 @@
+<div class="zq-actcompt zq-actcompt2">
+	{{#if showImg}}
+	<div class="zq-actcompt-pic">
+		<img src="{{activityImage}}!a-3-240x.jpg" width="180" alt="" />
+	</div>
+	{{/if}}
+	<div class="zq-actcompt-text">
+		<h4 class="zq-actcompt-tit">{{name}}</h4>
+		<p class="zq-actcompt-p"><strong>活动时间：</strong>{{#if collectInfo}} {{beginTimeFormatted}} - {{endTimeFormatted}} {{else}} {{lotteryBeginTimeFormatted}} - {{lotteryEndTimeFormatted}}  {{/if}}</p>
+		<p class="zq-actcompt-p"><strong>活动规则：</strong>{{{description}}}</p>
+		<div class="zq-actcompt2-state">
+			{{#if status.notYetStart}}
+			<a href="#lottery" class="zq-actcompt-btn zq-actcompt-btn-begin" id="zq_actcompt_not_yet_start">即将开始</a>
+			<p class="zq-actcompt-state-tt"><span class="zq-actcompt-or zq-actcompt-countdown"></span></p>
+			{{/if}}
+			{{#if status.inProgress}}
+			<a href="#lottery" class="zq-actcompt-btn zq-actcompt-btn-in" id="zq_actcompt_in_progress">立即参与</a>
+			<p class="zq-actcompt-state-tt zq-actcompt-joins">已有<span class="zq-actcompt-or zq-actcompt-fb">{{joins}}</span>人参与</p>
+			
+			{{/if}}	
+			{{#if status.ended}}
+			<a href="#lottery" class="zq-actcompt-btn zq-actcompt-btn-end" id="zq_actcompt_ended">已结束</a>
+			<p class="zq-actcompt-state-tt zq-actcompt-joins">已有<span class="zq-actcompt-or zq-actcompt-fb">{{joins}}</span>人参与</p>
+			{{/if}}
+		</div>
+	</div>	
+</div>
